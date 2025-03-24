@@ -1,0 +1,25 @@
+/**
+ * Fonction pour calculer le factoriel d'un nombre de manière récursive
+ * @param {number} n - Le nombre dont on veut calculer le factoriel
+ * @returns {number} - Le factoriel du nombre
+ */
+function factoriel(n) {
+    // Vérifie si l'entrée est un nombre positif
+    if (n < 0) {
+        throw new Error("Le nombre doit être un entier positif.");
+    }
+    // Cas de base : factoriel de 0 ou 1 est 1
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    // Appel récursif
+    return n * factoriel(n - 1);
+}
+
+// Exemple d'utilisation
+try {
+    const resultat = factoriel(5);
+    console.log("Le factoriel de 5 est : " + resultat);
+} catch (error) {
+    console.error(error.message);
+}
